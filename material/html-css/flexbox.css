@@ -1,0 +1,13 @@
+.outer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.inner img {
+    height: 40vh;
+}
+
+p {
+    text-align: center;
+}

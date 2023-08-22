@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Visualization Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns for the charts */
+        gap: 20px;
+      }
+
+      .chart {
+        background-color: #f9f9f9;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .full-width-chart {
+        grid-column: span 2; /* Makes the chart take full width */
+      }
+
+      p {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Data Visualization Dashboard</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia
+        odio vitae vestibulum.
+      </p>
+
+      <div class="grid-container">
+        <div class="chart" id="vis1"></div>
+        <div class="chart" id="vis2"></div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          tincidunt, nunc ac tempus mollis, orci arcu laoreet ante, non euismod
+          nisl ipsum id tortor.
+        </p>
+        <div class="chart full-width-chart" id="vis3"></div>
+        <p>
+          Donec in dui mauris. Vivamus hendrerit arcu sed erat molestie
+          vehicula. Sed auctor neque eu tellus rhoncus.
+        </p>
+        <div class="chart" id="vis4"></div>
+      </div>
+
+      <p>
+        Mauris bibendum massa eget lacinia sodales. Quisque sapien erat,
+        bibendum id risus vel, scelerisque congue est.
+      </p>
+    </div>
+
+    <script>
+      // Placeholder Vega-Lite spec
+      const sampleSpec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        description: "A simple bar chart",
+        data: {
+          values: [
+            { a: "A", b: 28 },
+            { a: "B", b: 55 },
+            { a: "C", b: 43 },
+          ],
+        },
+        mark: "bar",
+        encoding: {
+          x: { field: "a", type: "ordinal" },
+          y: { field: "b", type: "quantitative" },
+        },
+      };
+
+      // Embed the visualizations
+      vegaEmbed("#vis1", sampleSpec);
+      vegaEmbed("#vis2", sampleSpec);
+      vegaEmbed("#vis3", sampleSpec);
+      vegaEmbed("#vis4", sampleSpec);
+    </script>
+  </body>
+</html>

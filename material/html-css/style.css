@@ -1,0 +1,61 @@
+/* Selectors in HTML */
+
+h1 {
+    font-family: 'Fondamento';
+}
+
+p {
+    font-family: 'Roboto';
+}
+
+#idselect {
+    color: green;
+}
+
+.class-select {
+    color: blue;
+}
+
+
+/* Fonts in HTML */
+
+#head1 {
+    font-family: 'Abril Fatface', cursive;
+}
+
+#para1 {
+    font-family: 'Lobster', cursive;
+}
+
+
+/* Background in HTML */
+
+.bg-h1 {
+    background-color: #2D4B65;
+    color: white;
+}
+
+.bg-para {
+    background-color: #B0C6CF;
+}
+
+
+/* Text Alignment in HTML */
+
+#l-align {
+    text-align: left;
+    border: 1px solid black;
+    /* to set the border*/
+}
+
+#c-align {
+    text-align: center;
+    border: 1px solid black;
+    /* to set the border*/
+}
+
+#r-align {
+    text-align: right;
+    border: 1px solid black;
+    /* to set the border*/
+}

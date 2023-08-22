@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Concepts Dashboard</title>
+    <style>
+      /* Basic Styling */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      /* Flexbox Concepts */
+      .flex-container {
+        display: flex;
+        justify-content: space-between; /* Alignment along the main axis */
+        align-items: center; /* Alignment along the cross axis */
+      }
+      .flex-item {
+        width: 30%;
+        margin: 10px;
+        padding: 20px;
+        background-color: #ddd;
+        text-align: center;
+      }
+
+      /* Grid Concepts */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+        gap: 10px; /* Spacing between columns and rows */
+      }
+      .grid-item {
+        padding: 20px;
+        background-color: #ddd;
+        text-align: center;
+      }
+
+      /* Pseudo-classes and Pseudo-elements */
+      a:hover {
+        color: red;
+      }
+      .highlight::before {
+        content: "⟶";
+      }
+
+      /* CSS Custom Properties (Variables) */
+      :root {
+        --main-color: #3498db;
+      }
+      .variable-demo {
+        color: var(--main-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Concepts Dashboard</h1>
+
+      <section>
+        <h2>Flexbox Concepts</h2>
+        <div class="flex-container">
+          <div class="flex-item">Item 1</div>
+          <div class="flex-item">Item 2</div>
+          <div class="flex-item">Item 3</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Grid Concepts</h2>
+        <div class="grid-container">
+          <div class="grid-item">Item 1</div>
+          <div class="grid-item">Item 2</div>
+          <div class="grid-item">Item 3</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Pseudo-classes and Pseudo-elements</h2>
+        <a href="#">Hover over me</a>
+        <p class="highlight">I have content before me.</p>
+      </section>
+
+      <section>
+        <h2>CSS Custom Properties (Variables)</h2>
+        <p class="variable-demo">
+          This text uses a CSS variable for its color.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
