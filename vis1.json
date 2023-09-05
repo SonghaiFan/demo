@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "data/pop_temporal_Summary.csv"
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "quantitative",
+      "title": "Time (Year)"
+    },
+    "y": {
+      "field": "Population",
+      "type": "quantitative",
+      "title": "Population",
+      "axis": {
+        "format": ".1s"
+      }
+    },
+    "color": {
+      "field": "State",
+      "type": "nominal"
+    }
+  },
+  "config": {
+    "background": "transparent"
+  }
+}
