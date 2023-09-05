@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Column Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="h-screen">
+    <div class="h-full grid grid-cols-11 gap-2">
+      <!-- First Column -->
+      <div id="firstCol" class="grid col-span-4 bg-gray-200 h-full">
+        <div id="firstColEmpty" class="row-span-3 bg-red-200"></div>
+        <div id="p4" class="row-span-1 bg-blue-200">p4</div>
+        <div id="annotation2" class="row-span-1 bg-green-200">annotation2</div>
+        <div id="vis2" class="row-span-3 bg-yellow-200">vis2</div>
+        <div id="p5" class="row-span-2 bg-indigo-200">p5</div>
+      </div>
+
+      <!-- Second (middle) Column -->
+      <div id="secondCol" class="col-span-3 bg-gray-400 h-full">
+        <!-- This column is empty -->
+      </div>
+
+      <!-- Third Column -->
+      <div id="thirdCol" class="grid col-span-4 bg-gray-600 h-full">
+        <div id="header" class="row-span-1 bg-purple-200">header</div>
+        <div id="p1" class="row-span-4 bg-pink-200">p1</div>
+        <div id="legend" class="row-span-2 bg-purple-300">legend</div>
+        <div id="p2" class="row-span-3 bg-pink-300">p2</div>
+        <div id="annotation1" class="row-span-3 bg-purple-400">annotation1</div>
+        <div id="p3" class="row-span-5 bg-pink-400">p3</div>
+      </div>
+    </div>
+
+    <!-- Full screen width div below the main grid -->
+    <div id="fullWidthDiv" class="w-full h-screen bg-blue-500"></div>
+  </body>
+</html>

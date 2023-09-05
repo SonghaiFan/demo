@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Column Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* font */
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+      /* body */
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      /* div */
+      div {
+        border: 1px solid gainsboro;
+      }
+
+      header {
+        font-size: 3rem;
+      }
+    </style>
+  </head>
+
+  <body class="h-screen w-4/5 m-auto">
+    <!-- div under all other element -->
+    <div id="map" class="absolute w-4/5 h-full z-0 bg-gray-200"></div>
+    <div class="relative h-full grid grid-cols-11 gap-2 z-10">
+      <!-- First Column -->
+      <div id="firstCol" class="grid col-span-4 h-full">
+        <div id="firstColEmpty" class="row-span-3"></div>
+        <p id="p4" class="row-span-1">
+          Within the United States, Florida contains the highest percentage of
+          people over 65 (17.3%), and the 8th fewest people under 1..
+        </p>
+        <div id="annotation2" class="row-span-1">
+          County Name: Pinellas Total Population: 968,279
+        </div>
+        <div id="vis2" class="row-span-3">vis2</div>
+        <p id="p5" class="row-span-2">
+          With a population of 18.8 million according to the 2010 census,
+          Florida is the most populous state in the Southeastern United States,
+          and the second-most populous state in the South behind Texas.
+        </p>
+      </div>
+
+      <!-- Second (middle) Column -->
+      <div id="secondCol" class="col-span-3 h-full">
+        <!-- This column is empty -->
+      </div>
+
+      <!-- Third Column -->
+      <div id="thirdCol" class="grid col-span-4 h-full">
+        <header id="header" class="row-span-1">The Populace of Florida</header>
+        <p id="p1" class="row-span-4">
+          Florida is the third-most populous state in the United States. Its
+          residents include people from a wide variety of ethnic, racial,
+          national and religious backgrounds. The state has attracted
+          immigrants, particularly from Latin America..
+        </p>
+        <div id="legend" class="row-span-2">legend</div>
+        <p id="p2" class="row-span-3">
+          Spanish is spoken by more than 20% of the state's population, with
+          high usage especially in the Miami-Dade County area.
+        </p>
+        <div id="annotation1" class="row-span-3">
+          County Name: Miami-Dade Total Population: 2,702,302
+        </div>
+        <div id="p3" class="row-span-5">
+          Florida's majority ethnic group are European Americans, with
+          approximately 65% of the population identifying as White. National
+          ethnic communities in the state include Cubans, who migrated en masse
+          following the revolution in mid-century. They have been joined by
+          other immigrants from Latin America.
+        </div>
+      </div>
+    </div>
+
+    <!-- div take full width and height from its parent element, it should not in the document  flow, underneth -->
+  </body>
+</html>
