@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>D3 Circle Transition</title>
+  </head>
+  <body>
+    <input type="range" id="slider" min="0" max="1" step="0.01" value="0" />
+    <svg width="800" height="100"></svg>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script>
+      const svg = d3.select("svg");
+      const width = +svg.attr("width");
+      const height = +svg.attr("height");
+
+      const circle = svg
+        .append("circle")
+        .attr("cx", 50)
+        .attr("cy", height / 2)
+        .attr("r", 30)
+        .style("fill", "#3498db")
+        .style("opacity", 1)
+        .style("stroke", "black")
+        .style("stroke-width", 2);
+
+      const transitionConfig = {
+        cx: {
+          start: 50,
+          end: width - 50,
+        },
+        cy: {
+          start: height / 2,
+          end: height / 4,
+        },
+        r: {
+          start: 30,
+          end: 50,
+        },
+        fill: {
+          start: "#3498db",
+          end: "#e74c3c",
+        },
+        opacity: {
+          start: 1,
+          end: 0.5,
+        },
+        stroke: {
+          start: "black",
+          end: "green",
+        },
+        "stroke-width": {
+          start: 2,
+          end: 10,
+        },
+      };
+
+      const getInterpolator = (start, end) => {
+        if (typeof start === "number" && typeof end === "number") {
+          return d3.interpolateNumber(start, end);
+        } else if (
+          typeof start === "string" &&
+          /#?[0-9a-fA-F]{3,8}/.test(start) &&
+          /#?[0-9a-fA-F]{3,8}/.test(end)
+        ) {
+          return d3.interpolateRgb(start, end);
+        } else {
+          return d3.interpolateString(start, end);
+        }
+      };
+
+      const applyTransition = (element, config, value) => {
+        for (let attr in config) {
+          const startValue = config[attr].start;
+          const endValue = config[attr].end;
+          const interpolator = getInterpolator(startValue, endValue);
+
+          if (element.attr) {
+            // Check if it's an attribute method
+            element.attr(attr, interpolator(value));
+          }
+          if (element.style) {
+            // Check if it's a style method
+            element.style(attr, interpolator(value));
+          }
+        }
+      };
+
+      const slider = document.getElementById("slider");
+
+      slider.addEventListener("input", function () {
+        const value = +this.value;
+        applyTransition(circle, transitionConfig, value);
+      });
+    </script>
+  </body>
+</html>
