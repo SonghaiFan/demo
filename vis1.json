@@ -3,27 +3,43 @@
   "data": {
     "url": "data/pop_temporal_Summary.csv"
   },
-  "mark": "line",
+  "mark": {
+    "type": "line",
+    "interpolate": "basis",
+    "strokeWidth": 3
+  },
+  "width": "container",
+  "height": "container",
   "encoding": {
     "x": {
       "field": "Year",
       "type": "quantitative",
-      "title": "Time (Year)"
+      "title": "Time (Year)",
+      "axis": { "domain": false, "grid": false, "ticks": true }
     },
     "y": {
       "field": "Population",
       "type": "quantitative",
       "title": "Population",
       "axis": {
-        "format": ".1s"
+        "format": ".1s",
+        "tickCount": 4
       }
     },
     "color": {
       "field": "State",
-      "type": "nominal"
+      "type": "nominal",
+      "scale": {
+        "domain": ["Florida", "California", "Texas"],
+        "range": ["#6798c1", "#f7b6d2", "#fbde72"]
+      },
+      "legend": {
+        "title": "State",
+        "orient": "top-left",
+        "labelFontSize": 15,
+        "symbolStrokeWidth": 5,
+        "titleFontSize": 15
+      }
     }
-  },
-  "config": {
-    "background": "transparent"
   }
 }
